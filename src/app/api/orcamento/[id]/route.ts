@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { renderToBuffer, type DocumentProps } from "@react-pdf/renderer"
 import { createElement, type JSXElementConstructor, type ReactElement } from "react"
-import { supabaseAdmin } from "@/lib/supabase"
+import { getSupabaseAdmin } from "@/lib/supabase"
 import { sendQuotationToClient } from "@/lib/email"
 import { createRDDeal, attachPDFToDeal } from "@/lib/rdstation"
 import { createTrelloCard, attachPDFToCard } from "@/lib/trello"
@@ -13,6 +13,7 @@ export async function PUT(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const supabaseAdmin = getSupabaseAdmin()
   const session = await getSession()
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 

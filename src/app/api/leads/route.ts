@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server"
-import { supabaseAdmin } from "@/lib/supabase"
+import { getSupabaseAdmin } from "@/lib/supabase"
 import { sendLeadNotification } from "@/lib/email"
 import { createRDLead } from "@/lib/rdstation"
 import type { LeadFormData } from "@/lib/types"
 
 export async function GET() {
+  const supabaseAdmin = getSupabaseAdmin()
   const { data, error } = await supabaseAdmin
     .from("leads")
     .select("*")
@@ -15,6 +16,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const supabaseAdmin = getSupabaseAdmin()
   const body: LeadFormData = await req.json()
 
   // Validate required fields

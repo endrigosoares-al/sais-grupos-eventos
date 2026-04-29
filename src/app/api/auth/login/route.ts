@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server"
 import bcrypt from "bcryptjs"
 import { signToken, COOKIE_NAME } from "@/lib/auth"
-import { supabaseAdmin } from "@/lib/supabase"
+import { getSupabaseAdmin } from "@/lib/supabase"
 
 export async function POST(req: Request) {
+  const supabaseAdmin = getSupabaseAdmin()
   const { password } = await req.json()
 
   if (!password) {
