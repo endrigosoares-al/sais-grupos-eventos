@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --gold: #C1A15C;
+    --gold-light: #d4b87a;
+    --brown: #662E10;
+    --green: #7B8965;
+    --beige: #E9E5C3;
+    --beige-dark: #d4cfa8;
+    --white: #FFFFFF;
+    --ink: #1A1A1A;
+    --ink-light: #4A4A4A;
+    --border: #e2ddc8;
+
+    --background: var(--white);
+    --foreground: var(--ink);
+  }
 }
 
 @theme inline {
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-brown: var(--brown);
+  --color-green: var(--green);
+  --color-beige: var(--beige);
+  --color-beige-dark: var(--beige-dark);
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
+  --color-border: var(--border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Domaine Sans Text", Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Domaine Sans Text", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Domaine Sans Text — served via next/font or CDN fallback */
+@font-face {
+  font-family: "Domaine Sans Text";
+  src: local("Domaine Sans Text");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--beige); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Selection */
+::selection { background: var(--gold); color: var(--white); }
