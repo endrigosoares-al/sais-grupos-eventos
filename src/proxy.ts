@@ -8,7 +8,7 @@ const SECRET = new TextEncoder().encode(
 
 const PROTECTED = ["/interno/orcamento"]
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   const isProtected = PROTECTED.some((p) => pathname.startsWith(p))
@@ -29,5 +29,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/interno/:path*"],
+  matcher: ["/interno/orcamento", "/interno/orcamento/:path*"],
 }

@@ -1,11 +1,16 @@
 import { Metadata } from "next"
+import { cookies } from "next/headers"
 import QuotationList from "@/components/forms/QuotationList"
+
+export const maxDuration = 10
 
 export const metadata: Metadata = {
   title: "Orçamentos | SAIS — Interno",
 }
 
-export default function OrcamentoPage() {
+export default async function OrcamentoPage() {
+  await cookies()
+
   return (
     <main className="min-h-screen bg-[var(--beige)]">
       <header className="bg-[var(--ink)] text-white px-8 py-4 flex items-center justify-between">
