@@ -1,8 +1,16 @@
 import { Metadata } from "next"
 import Image from "next/image"
+import { Building2, ChefHat, MapPin, Sparkles } from "lucide-react"
 import LeadForm from "@/components/forms/LeadForm"
 
 const A = "/sais-assets/assets/"
+
+const salesTriggers = [
+  { icon: MapPin, text: "A 3 minutos do Centro de Convenções" },
+  { icon: Building2, text: "Estrutura completa no rooftop" },
+  { icon: ChefHat, text: "Bistrot e Bar Flor de Sal assinado pelo Chef Picuí" },
+  { icon: Sparkles, text: "Spa Loccitane en Provence (em breve)" },
+]
 
 export const metadata: Metadata = {
   title: "Grupos & Eventos | Sais Beach Living Hotel",
@@ -15,14 +23,14 @@ export default function GruposPage() {
     <main className="min-h-screen bg-[var(--beige)] text-[var(--ink)]">
       <section className="relative min-h-[92vh] overflow-hidden bg-[var(--ink)] text-white">
         <Image
-          src={`${A}piscina_20do_20rooftop_20com_2_349cf5706f77.jpg`}
+          src={`${A}restaurante_20salao_20e_20mesa_b4d73362a26f.jpg`}
           alt=""
           fill
           priority
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.36)_48%,rgba(0,0,0,.18)),linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,0)_45%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.82)_48%,rgba(0,0,0,.76)),linear-gradient(0deg,rgba(0,0,0,.86),rgba(0,0,0,.72)_45%)]" />
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-between px-6 py-8 md:px-10 md:py-10">
           <header className="flex items-center justify-between gap-5 border-b border-white/20 pb-5">
@@ -34,7 +42,7 @@ export default function GruposPage() {
               className="h-12 w-auto object-contain md:h-16"
             />
             <a
-              href="https://wa.me/5582996130280"
+              href="tel:+558235121005"
               className="hidden border border-white/55 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:border-[var(--gold)] hover:bg-[var(--gold)] sm:inline-flex"
             >
               Fale com eventos
@@ -56,28 +64,26 @@ export default function GruposPage() {
 
             <aside className="border border-white/24 bg-black/24 p-6 backdrop-blur-sm">
               <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--gold-light)]">Contato direto</p>
-              <a href="https://wa.me/5582996130280" className="mt-4 block text-2xl font-bold text-white hover:text-[var(--gold-light)]">
-                (82) 99613-0280
+              <a href="tel:+558235121005" className="mt-4 block text-2xl font-bold text-white hover:text-[var(--gold-light)]">
+                (82) 3512-1005
               </a>
               <p className="mt-2 text-sm text-white/70">grupos.eventos@saishotel.com.br</p>
-              <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/18 pt-6 text-sm text-white/74">
-                <span>324 acomodações</span>
-                <span>Rooftop panorâmico</span>
-                <span>Flor de Sal</span>
-                <span>Perto do centro</span>
-              </div>
             </aside>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-6xl gap-4 px-6 py-5 text-sm text-[var(--ink-light)] md:grid-cols-4 md:px-10">
-          {["Pajuçara", "Rooftop", "Gastronomia", "Hospedagem"].map((item) => (
-            <div key={item} className="border-l border-[var(--border)] pl-4">
-              <span className="text-[var(--gold)]">SAIS</span> {item}
-            </div>
-          ))}
+      <section className="border-b border-[var(--border)] bg-white">
+        <div className="mx-auto grid max-w-6xl gap-5 px-6 py-7 text-sm text-[var(--ink)] md:grid-cols-4 md:px-10">
+          {salesTriggers.map((item) => {
+            const Icon = item.icon
+            return (
+              <div key={item.text} className="flex items-center gap-3 border-l border-[var(--border)] pl-4">
+                <Icon className="h-5 w-5 shrink-0 text-[var(--gold)]" strokeWidth={1.6} />
+                <span className="leading-5">{item.text}</span>
+              </div>
+            )
+          })}
         </div>
       </section>
 
@@ -93,14 +99,14 @@ export default function GruposPage() {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <Image
-            src={`${A}restaurante_20salao_20e_20mesa_b4d73362a26f.jpg`}
+            src={`${A}cafe_20da_20manha_2C_20Sais_20_a9ac219a4281.jpg`}
             alt=""
             width={640}
             height={800}
             className="aspect-[4/5] w-full object-cover"
           />
           <Image
-            src={`${A}quarto_20402_20Frente_20Mar_20_5ed15e1ba050.jpg`}
+            src={`${A}pratos_2C_20Sais_20Beach_20Liv_d55d6121008f.jpg`}
             alt=""
             width={640}
             height={800}
@@ -139,7 +145,7 @@ export default function GruposPage() {
           height={112}
           className="mx-auto mb-6 h-12 w-auto object-contain opacity-90"
         />
-        <p>Sais Beach Living Hotel | Av. Dr. Antônio Gouveia, 81 - Pajuçara, Maceió - AL | (82) 3512-1004</p>
+        <p>Sais Beach Living Hotel | Av. Dr. Antônio Gouveia, 81 - Pajuçara, Maceió - AL | (82) 3512-1005</p>
       </footer>
     </main>
   )
