@@ -8,7 +8,7 @@ const A = "/sais-assets/assets/"
 const salesTriggers = [
   { icon: MapPin, text: "A 3 minutos do Centro de Convenções" },
   { icon: Building2, text: "Estrutura completa no rooftop" },
-  { icon: ChefHat, text: "Bistrot e Bar Flor de Sal assinado pelo Chef Picuí" },
+  { icon: ChefHat, text: "Bistrot e Bar Flor de Sal assinado pelo Chef Wanderson Medeiros @Picui" },
   { icon: Sparkles, text: "Spa Loccitane en Provence (em breve)" },
 ]
 
