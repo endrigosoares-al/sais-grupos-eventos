@@ -2,16 +2,18 @@
 
 @layer base {
   :root {
-    --gold: #C1A15C;
-    --gold-light: #d4b87a;
-    --brown: #662E10;
-    --green: #7B8965;
-    --beige: #E9E5C3;
-    --beige-dark: #d4cfa8;
+    --gold: #B99A5B;
+    --gold-light: #D0B880;
+    --brown: #6D4B2D;
+    --green: #5F6F63;
+    --beige: #F4F0E8;
+    --beige-dark: #E7DDCF;
     --white: #FFFFFF;
-    --ink: #1A1A1A;
-    --ink-light: #4A4A4A;
-    --border: #e2ddc8;
+    --ink: #10100E;
+    --ink-light: #5F5A53;
+    --sand: #C7B9A4;
+    --sea: #5D7D80;
+    --border: #D8CBB8;
 
     --background: var(--white);
     --foreground: var(--ink);
@@ -25,12 +27,47 @@
   --color-green: var(--green);
   --color-beige: var(--beige);
   --color-beige-dark: var(--beige-dark);
+  --color-sand: var(--sand);
+  --color-sea: var(--sea);
   --color-ink: var(--ink);
   --color-ink-light: var(--ink-light);
   --color-border: var(--border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Domaine Sans Text", Georgia, serif;
+  --font-sans: "Sais Poppins", Arial, sans-serif;
+  --font-serif: "Sais Garamond", Georgia, serif;
+}
+
+@font-face {
+  font-family: "Sais Garamond";
+  src: url("/sais-assets/assets/SlGUmQSNjdsmc35JDF1K5GR1SDk_YA_cbd0a51d2480.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sais Garamond";
+  src: url("/sais-assets/assets/SlGWmQSNjdsmc35JDF1K5GRweDs1Zy_67b9a4b2594c.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sais Poppins";
+  src: url("/sais-assets/assets/pxiEyp8kv8JHgFVrJJfecnFHGPc_18c7330aa68c.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sais Poppins";
+  src: url("/sais-assets/assets/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQE_124d0c48ac54.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -40,22 +77,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Domaine Sans Text", Georgia, serif;
+  font-family: "Sais Poppins", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Domaine Sans Text — served via next/font or CDN fallback */
-@font-face {
-  font-family: "Domaine Sans Text";
-  src: local("Domaine Sans Text");
-  font-weight: 300 900;
-  font-display: swap;
+.font-sais-serif {
+  font-family: "Sais Garamond", Georgia, serif;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--beige); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
-/* Selection */
 ::selection { background: var(--gold); color: var(--white); }
