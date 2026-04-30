@@ -1,4 +1,4 @@
-import { Document, Page, Text, View, StyleSheet, Font } from "@react-pdf/renderer"
+import { Document, Page, Text, View, StyleSheet, Font, Image } from "@react-pdf/renderer"
 import type { ReactNode } from "react"
 import type { Quotation } from "@/lib/types"
 import { formatCurrency } from "@/lib/utils"
@@ -21,6 +21,8 @@ const SAND_DARK = "#D8CBB8"
 const STONE = "#5F5A53"
 const MUTED = "#8D867B"
 const WHITE = "#FFFFFF"
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || "https://sais-grupos-eventos.vercel.app").replace(/\/$/, "")
+const LOGO_SRC = `${APP_URL}/sais-assets/assets/0f2d1c_630e44e64702423c83ec255_3972680c0367.png`
 
 function parseDateParts(date: Date | string) {
   const value = typeof date === "string" ? date : date.toISOString().slice(0, 10)
@@ -72,18 +74,10 @@ const s = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "flex-start",
   },
-  logo: {
-    fontFamily: "Times-Roman",
-    fontSize: 34,
-    letterSpacing: 9,
-    color: GOLD_LIGHT,
-  },
-  logoSub: {
-    marginTop: 4,
-    fontSize: 7,
-    letterSpacing: 4,
-    color: GOLD_LIGHT,
-    textTransform: "uppercase",
+  logoImage: {
+    width: 138,
+    height: 48,
+    objectFit: "contain",
   },
   proposalPill: {
     borderWidth: 1,
@@ -333,10 +327,9 @@ const s = StyleSheet.create({
     fontSize: 6.8,
   },
   footerBrand: {
-    color: GOLD_LIGHT,
-    fontSize: 7,
-    letterSpacing: 2,
-    fontFamily: "Helvetica-Bold",
+    width: 42,
+    height: 15,
+    objectFit: "contain",
   },
   signature: {
     marginTop: 26,
@@ -359,7 +352,7 @@ const s = StyleSheet.create({
 
 const Footer = () => (
   <View style={s.footer} fixed>
-    <Text style={s.footerBrand}>SAIS</Text>
+    <Image src={LOGO_SRC} style={s.footerBrand} />
     <Text style={s.footerText}>{HOTEL.phone}</Text>
     <Text style={s.footerText}>{HOTEL.emailGroups}</Text>
     <Text style={s.footerText}>{HOTEL.website}</Text>
@@ -397,8 +390,7 @@ export default function QuotationPDF({ quotation: q }: Props) {
         <View style={s.cover}>
           <View style={s.coverTop}>
             <View>
-              <Text style={s.logo}>SAIS</Text>
-              <Text style={s.logoSub}>Beach Living Hotel</Text>
+              <Image src={LOGO_SRC} style={s.logoImage} />
             </View>
             <View style={s.proposalPill}>
               <Text style={s.proposalPillLabel}>Proposta</Text>
