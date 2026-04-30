@@ -103,7 +103,7 @@ export const CLIENT_TYPES = [
 export const HOTEL = {
   name: "Sais Beach Living Hotel",
   address: "Av. Dr. Antônio Gouveia, 81 – Pajuçara, Maceió – AL, 57030-170",
-  phone: "+55 82 3512-1004",
+  phone: "+55 82 3512-1005",
   website: "www.saishotel.com.br",
   emailGroups: "grupos.eventos@saishotel.com.br",
   emailReservas: "reservas@saishotel.com.br",

@@ -123,7 +123,7 @@ export default function LeadForm() {
           Obrigado, <strong>{form.nome.split(" ")[0]}</strong>. Nossa executiva de grupos entrará em contato em até <strong>24 horas</strong> com uma proposta personalizada para o <strong>{form.nome_evento}</strong>.
         </p>
         <div className="mt-8 pt-8 border-t border-[var(--border)] flex justify-center gap-6 text-xs text-[var(--ink-light)]">
-          <span>📞 (82) 3512-1004</span>
+          <span>📞 (82) 3512-1005</span>
           <span>📧 grupos.eventos@saishotel.com.br</span>
         </div>
       </div>
